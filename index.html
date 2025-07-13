@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>本格スロットマシン 🎰</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <h1>本格スロットマシン 🎰</h1>
+  <div class="coin-display">所持コイン: <span id="coinCount">1000</span> 🪙</div>
+  <div class="mode-select">
+    <label>難易度：
+      <select id="difficulty">
+        <option value="easy">かんたん</option>
+        <option value="normal" selected>ふつう</option>
+        <option value="hard">むずかしい</option>
+      </select>
+    </label>
+    <button id="themeBtn">テーマ切替</button>
+  </div>
+</header>
+
+<main>
+  <div class="slot-container">
+    <div class="reel-row" id="reelRow1">
+      <div class="reel" id="r1c1"></div>
+      <div class="reel" id="r1c2"></div>
+      <div class="reel" id="r1c3"></div>
+    </div>
+    <div class="reel-row" id="reelRow2">
+      <div class="reel" id="r2c1"></div>
+      <div class="reel" id="r2c2"></div>
+      <div class="reel" id="r2c3"></div>
+    </div>
+    <div class="reel-row" id="reelRow3">
+      <div class="reel" id="r3c1"></div>
+      <div class="reel" id="r3c2"></div>
+      <div class="reel" id="r3c3"></div>
+    </div>
+  </div>
+
+  <button id="spinBtn">スピンスタート</button>
+
+  <div class="result" id="result"></div>
+
+  <section class="history-section">
+    <h2>スピン履歴</h2>
+    <ul id="historyList"></ul>
+  </section>
+
+  <section class="ranking-section">
+    <h2>ハイスコア（累計勝利回数）</h2>
+    <div id="rankingDisplay">読み込み中...</div>
+  </section>
+</main>
+
+<audio id="spinSound" src="https://actions.google.com/sounds/v1/cartoon/wood_plank_flicks.ogg" preload="auto"></audio>
+<audio id="winSound" src="https://actions.google.com/sounds/v1/cartoon/clang_and_wobble.ogg" preload="auto"></audio>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,176 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background: #1a1a2e;
+  color: #eee;
+  text-align: center;
+  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+
+.coin-display {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.mode-select {
+  margin-bottom: 20px;
+}
+
+.mode-select select,
+.mode-select button {
+  font-size: 1rem;
+  padding: 6px 10px;
+  margin-left: 8px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.mode-select button {
+  background-color: #f39c12;
+  color: #222;
+  box-shadow: 0 0 10px #f39c12;
+  transition: background-color 0.3s ease;
+}
+
+.mode-select button:hover {
+  background-color: #e67e22;
+}
+
+main {
+  flex-grow: 1;
+}
+
+.slot-container {
+  display: inline-block;
+  background: #0f3460;
+  padding: 12px;
+  border-radius: 16px;
+  box-shadow: 0 0 25px #16213e;
+  user-select: none;
+  margin-bottom: 15px;
+}
+
+.reel-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin: 8px 0;
+}
+
+.reel {
+  width: 80px;
+  height: 80px;
+  background: #53354a;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 48px;
+  color: #ffdc00;
+  box-shadow: 0 0 12px #ffdc00 inset;
+  transition: background-color 0.3s ease;
+}
+
+.reel.win {
+  background-color: #2ecc71;
+  box-shadow: 0 0 20px #27ae60;
+  color: #fff;
+}
+
+button#spinBtn {
+  font-size: 22px;
+  padding: 12px 40px;
+  border-radius: 18px;
+  border: none;
+  background-color: #f39c12;
+  color: #222;
+  box-shadow: 0 0 15px #f39c12;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 15px;
+}
+
+button#spinBtn:disabled {
+  background-color: #999;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+button#spinBtn:hover:not(:disabled) {
+  background-color: #e67e22;
+}
+
+.result {
+  font-size: 24px;
+  font-weight: bold;
+  min-height: 30px;
+  margin-bottom: 20px;
+}
+
+.history-section, .ranking-section {
+  background: #16213e;
+  padding: 12px;
+  border-radius: 14px;
+  max-width: 350px;
+  margin: 0 auto 20px auto;
+  text-align: left;
+}
+
+.history-section h2, .ranking-section h2 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+#historyList {
+  max-height: 180px;
+  overflow-y: auto;
+  list-style: none;
+  font-size: 14px;
+  color: #ccc;
+  padding-left: 8px;
+}
+
+#historyList li {
+  padding: 4px 0;
+  border-bottom: 1px solid #2c3e50;
+}
+
+#rankingDisplay {
+  font-size: 16px;
+  color: #ddd;
+}
+
+/* レスポンシブ */
+@media screen and (max-width: 480px) {
+  .reel {
+    width: 60px;
+    height: 60px;
+    font-size: 36px;
+  }
+  button#spinBtn {
+    font-size: 18px;
+    padding: 10px 24px;
+  }
+  .history-section, .ranking-section {
+    max-width: 100%;
+  }
+}
