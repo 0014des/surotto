@@ -167,7 +167,7 @@
   // --- ランキング描画 ---
   function renderRanking() {
     let wins = localStorage.getItem('slot_wins') || 0;
-    rankingDisplay.textContent = ${wins} 回の勝利;
+    rankingDisplay.textContent = `${wins} 回の勝利`;
   }
 
   // --- localStorage読み込み ---
@@ -230,7 +230,7 @@
       });
       coins += totalPayout;
       winsCount++;
-      resultEl.textContent = 🎉 当たり！獲得コイン：${totalPayout} 🪙;
+      resultEl.textContent = `🎉 当たり！獲得コイン：${totalPayout} 🪙`;
       resultEl.style.color = '#00cc00';
       winSound.currentTime = 0;
       winSound.play();
@@ -241,7 +241,7 @@
 
     // 履歴更新
     const timestamp = new Date().toLocaleTimeString();
-    const historyMsg = ${timestamp} - ${wins.length > 0 ? '当たり' : 'ハズレ'} (所持コイン: ${coins});
+    const historyMsg = `${timestamp} - ${wins.length > 0 ? '当たり' : 'ハズレ'} (所持コイン: ${coins})`;
     history.push(historyMsg);
     if(history.length > 50) history.shift(); // 最大50件まで保持
 
